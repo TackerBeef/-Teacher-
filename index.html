@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>starteacher</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <style type="text/css">
+	  	html,body{
+	       width:100%;
+	       height: 100%;
+	       background-color:transparent ;
+	        
+	        }
+
+	   	body{
+	        width:100%;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flex:column;
+	        flex-flow:column;
+	    }
+	    
+	    #wrap{
+	    	width: 100%;
+	        height: 100%;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient: vertical;
+	        -webkit-flex-flow: column;
+	        flex-flow: column;
+	    }
+	    
+	    #header h1{
+	        font-size: 25px; 
+	        height: 44px; 
+	        margin: 0em; 
+	        color: #fff;
+	    }
+	     .header,.practice,.student{
+	        width: 100%;
+	        height: 50px;
+	        background-color: #0099ff;   
+	        text-align: center;
+			line-height: 45px;  
+	    }
+		
+		.Messages,.mys{
+			text-align:center;
+		    color: #fff; 
+		}
+		.questionW,.alls{
+		  	text-align:center;
+		    color: #fff;
+		}
+		.aquestion,.setc{
+				text-align:center;
+			    color: #fff;
+		}
+		
+		.header .IgnoreMessages{
+		       	padding-top:15px;
+		        padding-right: 20px;
+		        -webkit-box-flex:1;
+		        -webkit-flex:1;
+		        flex:1;
+		        height: 40px;
+		        text-align: right;
+		        font-size:16px;
+		        color: #000000; 
+		}
+	    #main{
+	        -webkit-box-flex: 1; 
+	        -webkit-flex: 1;
+	        flex: 1;
+	    }
+	    .footer{
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:horizontal;
+	        -webkit-flex-flow:row;
+	        flex-flow:row;
+	
+	        width: 100%;
+	        height: 55px;
+	        background-color: #f7f6f9;
+	        border-top: solid 1px #c4c3c9; 
+	    }	    
+	     .footer .menu{
+	        box-sizing:border-box;
+	        padding-top:35px;
+	        padding-bottom:5px;
+	        -webkit-box-flex:1;
+	        -webkit-flex:1;
+	        flex:1;
+	        height: 50px;
+	        text-align: center;
+	        font-size:13px;
+	        background-size: 20px 20px;
+	        background-position: center 8px;
+	        background-repeat: no-repeat;	        
+	    }
+	    .footer .near{
+	        background-image: url(./image/093-drawer.png);
+	        color: #000;
+	    }
+	    .footer .near.active{
+	        background-image: url(./image/093-drawer_blue.png);
+	        color:#0099ff;
+	    }
+	    .footer .live{
+	        background-image: url(./image/096-box-remove.png);
+	        color: #000;
+	    }	    	    
+	    .footer .live.active{
+	        background-image: url(./image/096-box-remove_blue.png);
+	        color:#0099ff;
+	    }
+	    .footer .news{
+	        background-image: url(./image/pencil.png);
+	        color: #000;	        
+	    }
+	    .footer .news.active{
+	        background-image: url(./image/pencil_blue.png);
+	        color:#0099ff;
+	    }
+	    .footer .contactslis{
+	         background-image: url(./image/114-user.png);
+	         color: #000;
+	    }
+	    .footer .contactslis.active{
+	        background-image: url(./image/114-user_blue.png);
+	        color:#0099ff;
+	    }
+	    .footer .my{
+	        background-image: url(./image/093-drawer.png.png);
+	        color: #000;
+	    }
+	    .footer .my.active{
+	        background-image: url(./image/114-user_blue.png);
+	        color:#0099ff;
+	    }
+	
+	   
+	    .con{font-size: 28px; text-align: center;}
+	    .hactive{
+	        
+	    }
+	    .nactive{
+	        display: none;
+	
+	    }
+	    .show{
+	        display: block;
+	    }
+/*------下来菜单---------------------------------------------------------------------------------*/
+		.dropdown_pic{
+            width: 40px;
+			height: 40px;
+            margin-left:  26px;
+            margin-top:  3px;
+            background-size:100% 100%;
+            background-image: url("./image/plus-round_white.png" );
+			float: right;
+            position: fixed;
+            top: 5px;
+            right: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+    <div id="header">
+    <div id="qu" class="header header-item show ">
+       <div id="aquestion" class="qm aquestion ">班级管理</div>
+    </div>
+
+    <div id="tike" class="practice nactive header-item ">
+          <div id="mys" class="qm mys">作业布置</div>
+       </div>
+
+
+       <div id="chat" class="student nactive header-item">
+          <div id="mys" class="qm mys">答题</div>
+       </div>
+  
+
+       <div id="student" class="student nactive header-item">
+          <div id="mys" class="qm mys">个人</div>
+       </div>
+		<!-- 下拉菜单 -->
+        <div class="dropdown_pic"  onclick="MNPopups()"></div>  
+    	</div>
+        <div id="main">
+               
+           </div>  
+        <footer class="footer" id="footer">
+       <div id="menu" class="menu near" tapmode="active" onclick="fnChange(0)" >班级管理</div>
+       <div id="menu" class="menu live" tapmode="active" onclick="fnChange(1)">作业布置</div>
+       <div id="menu" class="menu news" tapmode="active" onclick="fnChange(2)">答题</div>
+       <div id="menu" class="menu contactslis" tapmode="active" onclick="fnChange(3)">个人</div>
+         </footer>  
+ </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/localdb.js"></script>
+<script type="text/javascript" src="./script/SHA1.js"></script>
+<script type="text/javascript">
+        apiready = function(){
+            fnReadyOpenWin();   
+            fnInit();
+            fnChange(0);
+            //如果不是第一次登录，跳过欢迎页
+            if(!'nofirst'==api.pageParam.name){
+            fnOpenWelcome();
+            };
+            
+    };
+//    下f面四菜单页名
+    frames=['frames0','frames1','frames2','frames3'];
+    var headers,footers,headerHeight,footerHeight;
+    function fnInit() {
+           
+            var header = $api.byId('header');
+            var footer = $api.byId('footer');
+            
+            
+            headers = $api.domAll(header, '.header-item');
+            footers = $api.domAll(footer, 'div');
+
+
+            for (var i = 0; i < headers.length; i++) {
+                $api.fixIos7Bar(headers[i]);
+            }
+
+            headerHeight = $api.offset(header).h;
+            footerHeight = $api.offset(footer).h;
+        };
+        
+
+    function fnChange(index){
+    
+        for (var i = 0;i<footers.length;i++) {
+            if (index==i) {
+                $api.addCls(footers[i], 'active');
+                $api.removeCls(headers[i], 'nactive');
+                $api.addCls(headers, 'show');
+               
+                
+//-------页面换页----------------------------------------------------
+                
+                api.openFrame({
+                    name: 'frames[i]',
+                    url: './html/frames'+[i]+'.html',
+                    bounces:true,
+                    bgColor:'#f0f0f0',
+                    vScrollBarEnabled:false,
+                    hScrollBarEnabled:false,
+                    rect: {
+                        x: 0,
+                        y: headerHeight,
+                        w: 'auto',
+                        h: api.frameHeight-headerHeight-footerHeight
+                    }
+                });
+            }else{
+                $api.removeCls(headers[i], 'show');
+                $api.addCls(headers[i], 'nactive');
+                $api.removeCls(footers[i], 'active');
+                api.setFrameAttr({
+                    name: frames[i],
+                    hidden: true
+                });
+            }
+        }
+
+    };
+
+
+
+//-------欢迎页,共四页--------------------------------------------------------------
+         function fnOpenWelcome() {
+            var frames = [];
+            for (var i = 1; i <= 4; i++) {
+                frames.push({
+                    name: 'welcome_frame_' + i,
+                    url: './html/welcome_frame_' + i + '.html',
+                    bounces: false,
+                    bgColor: './image/welcome/' + i + '.png'
+                });
+            }
+
+            api.openFrameGroup({
+                name: 'welcome_group',
+                scrollEnabled: true,
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto'
+                },
+                index: 0,
+                frames: frames
+            });
+        };
+        
+        
+//----------下来菜单----------------------------------------------------------------------------------
+	function MNPopups(){
+	var mnPopups = api.require('MNPopups');
+	    mnPopups.open({
+	        rect: {
+	            w: 180,
+	            h: 140
+	        },
+	        position: {
+	            x: api.winWidth - 50,
+	            y: 50
+	        },
+	        styles: {
+	            mask: 'rgba(0,0,0,0.2)',
+	            bg: '#eee',
+	            corner:5,
+	            cell: {
+	                bg: {
+	                    normal: '',
+	                    highlight: ''
+	                },
+	                h: 45,
+	                title: {
+	                    marginL: 45,
+	                    color: '#636363',
+	                    size: 12,
+	                },
+	                icon: {
+	                    marginL: 10,
+	                    w: 25,
+	                    h: 25,
+	                    corner: 2
+	                },
+	                separateLine: {              //（可选项）JSON 类型；分割线的样式设置
+	                width: 0,                //（可选项）数字类型；分割线的粗细，默认为1
+	                marginLR: 0,              //（可选项）数字类型；分割线距离左右的间距，默认为0
+	                bg: '#C0C0C0',          //（可选项）字符类型；分割线的背景颜色，支持rgb、rgba、#；默认：#C0C0C0 
+	                hideLastSeparateLine: false //(可选项)布尔类型；是否隐藏最后一条分割线，默认false                    
+	                }
+		            },
+		            pointer: {
+		                size: 7,
+		                xPercent: 90,
+		                yPercent: 0,
+		                orientation: 'downward'
+		            }
+	        },
+	        datas: [{
+	            title: '扫一扫',
+	            icon: 'widget://image/qr_code.png',
+	        }, {
+	            title: '新增班级',
+	            icon: 'widget://image/116-user-plus.png',
+	        }, {
+	            title: '添加教师/学生/班级',
+	            icon: 'widget://image/115-users.png',
+	        }],
+	        animation: true
+	    }, function(ret) {
+	    var index=JSON.stringify(ret.index);
+	    
+	        if (index==0) {
+		    var FNScanner = api.require('FNScanner');
+//----------扫描二维码---------------------------------------------------------------------------------
+			FNScanner.openScanner({
+		    autorotation: true
+			}, function(ret, err) {
+			var scan_code=JSON.stringify();
+		    if(ret.eventType=='selectImage'){
+	        	
+	    	}else if(ret.eventType=='success'){
+	    		
+	        	alert(JSON.stringify(ret.content));
+	    	} else if(ret.eventType=='fail'){
+	    		
+	    	} else { 
+	    	return 0	
+	    	}
+	    	
+		});        
+	
+	      }
+	      else if(index==1){
+		      api.openWin({
+			    name: 'dropdownList1',
+			    url: './html/dropdownList1.html',
+			    pageParam: {
+			        name: 'dropdownList1'
+			    }
+			})
+	      }
+	      else if(index==2){
+		      api.openWin({
+			    name: 'dropdownList2',
+			    url: './html/dropdownList2.html',
+			    pageParam: {
+			        name: 'dropdownList2'
+			    }
+			})
+			}
+		
+		else{return 0}
+	    }); 
+	    }
+	    
+
+	       
+</script>
+</html>
