@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    	body{
+    		
+    	}
+	 	.search_area{
+			width: 100%;
+			height: 40px;
+			background-color: #cccccc;
+		}
+		.search{
+			width: 97%;
+			height: 30px;
+			background-color:white;
+			border-radius: 5px;
+			position: relative;
+			top: 5px;
+			margin:auto;
+			font-size: 18px;		
+		}
+		body div div img{
+			width: 20px;
+			position: relative;
+			left: 5px;
+			top: 5px;
+			display: block;
+			float: left;
+			background-size:100% 100%;
+		}
+		.search_n{
+			display: block;
+			float: left;
+			margin-left: 10px; 
+			line-height: 31px;
+		}
+    	.one{
+    	   width: 100%;
+    	   height:100px;
+    	   margin-top: 10px;
+           background:#fff;
+           border-bottom: 1px #ededed solid;
+           display: flex;
+           justify-content: space-between;
+           border-bottom: 1px #ccc solid;
+    	}
+    	.first{
+			margin-top: 15px;
+    	    margin-left: 15px;
+           	font-size: 15px;
+           	background:url(../image/head_image.jpg) no-repeat;
+           	background-size: 100%;
+           	width: 60px;
+           	height: 60px;
+    	}
+    	.second{
+    		margin-top: 30px;
+    	  	margin-right: 15px;
+        	font-size: 16px;
+			text-align: center;
+			line-height: 25px;
+        	color:#000;
+			width: 80px;
+			height: 30px;
+			background: #38a5ff;
+			border-radius: 5px;
+			border: 1px #ededed solid;
+    	}
+    	.left{
+			display: flex;
+			flex-flow: wrap;
+    	}
+    	.center{
+    	 	margin:15px;
+			display: flex;
+			flex-flow: column;
+    	}
+    	.name_or_class{
+    	  
+    	}
+    	.id_number{
+    	 	font-size: 12px;
+			color: #777;
+    	}
+    	.school{
+    		font-size: 12px;
+			color: #777;
+    	}
+    </style>
+</head>
+<body>
+<div class="search_area" onclick="UIListSearch()">
+    	<div class="search"><img src="../image/135-search.png">
+    		<div class="search_n">搜索</div>
+    	</div>
+    <div class="one">
+    	<div class="left">
+	    		<div class="first"></div>
+				<div class="center">
+					<div class="name_or_class">张三</div>
+					<div class="id_number">ID：66565641</div>
+					<div class="school">海城小学</div>
+				</div>
+		</div>
+		<div class="second open-win" win="add">添加</div>
+	</div>	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		fnReady();
+	};
+</script>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<style>
+	html,body{
+		background:#ededed;
+	}
+	.search_area{
+		width: 100%;
+		height: 40px;
+		background-color: #cccccc;
+	}
+	.search{
+		width: 97%;
+		height: 30px;
+		background-color:white;
+		border-radius: 5px;
+		position: relative;
+		top: 5px;
+		margin:auto;
+		font-size: 18px;		
+	}
+	body div div img{
+		width: 20px;
+		position: relative;
+		left: 5px;
+		top: 5px;
+		display: block;
+		float: left;
+		background-size:100% 100%;
+	}
+	.search_n{
+		display: block;
+		float: left;
+		margin-left: 10px; 
+	}
+	.top_choice{
+		width:100%;
+		height: 27px;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding-top:1px;
+		border-bottom:1px #bbbbbb solid;
+		
+	}
+	.second_top{
+		width: 35px;
+		height: 24px;
+		text-align: center;
+	}
+	.dropdown_class{
+		width: 90px;
+		
+	}
+	.dropdown_subject{
+		width: 90px;
+		
+	}
+	.dropdown_show{
+		width: 90px;
+	}
+	.pic_person{
+		width: 53px;
+		height: 53px;
+		background-image: url(../image/login01.png);
+		margin: 5px;
+		margin-top: 10px;
+		background-size:100% 100%;
+	}
+	.problem_top{
+		width: 100%;
+		height: 70px;
+		background-color: white;
+		display: flex;
+		flex-flow:row nowrap;
+		align-items:center;
+	}
+	.problem_down{
+    	display: flex;
+		flex-flow: row wrap;
+		border-bottom:1px #bbbbbb solid;
+		padding-bottom: 10px;
+		justify-content: space-between;
+		align-items: flex-end;
+		background: #fff;
+	}
+	.person{
+    
+	}
+	.name{
+		font: 14px;
+		margin-top: 5px;
+		margin-left: 18px;
+	}
+	.passage{
+		
+	}
+	.class_subject_time{
+		position: relative;
+		left:5px;
+		font-size: 12px;
+		color: #6b6b6b;
+	}
+	.reply{
+		border: 1px  solid;
+		border-radius: 5px;
+		width: 70px;
+		height: 27px;
+		text-align: center;
+		background-color: #9ccc65;
+		color: #fff;
+		line-height: 25px;
+		font-size: 15px;
+		
+	}
+	.money{
+		 background: url('../image/raw_1487578254.png');
+		 background-size: 100% 100%;
+		 padding-top: 10px;
+		 padding-left: 12px;
+		 width: 53px;
+		 height: 30px;
+	}
+	.money_no{
+		 background: url('../image/raw_1487578013.png');
+		 background-size: 100% 100%;
+		 padding-top: 10px;
+		 padding-left: 12px;
+		 width: 53px;
+		 height: 30px;
+	}
+	select{
+		height: 23px;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="search_area" onclick="UIListSearch()">
+    	<div class="search"><img src="../image/135-search.png">
+    		<div class="search_n">搜索</div>
+    	</div>
+    </div>
+    <div class="top_choice">
+    	<div class="second_top">年级</div>
+    	<div class="dropdown_class">
+    		<select>
+    			<option value="one">一年级</option>
+    			<option value="two">二年级</option>
+    			<option value="three">三年级</option>
+    			<option value="four">四级</option>
+    			<option value="five">五年级</option>
+    			<option value="six">六年级</option>
+    		</select>
+    	</div>
+    	<div class="second_top">科目</div>
+    	<div class="dropdown_subject">
+    		<select>
+    				<option value="All">全部</option>
+					<option value="Chinese">语文</option>
+					<option value="Math">数学</option>
+					<option value="English">英语</option>
+					<option value="Physical">物理</option>
+					<option value="Chemistry">化学</option>
+					<option value="Biology">生物</option>
+    		</select>
+    	</div>
+    	<div class="second_top">显示</div>
+    	<div class="dropdown_show">
+    		<select>
+    			<option value="no">未打赏</option>
+    			<option value="yes">已打赏</option>
+    		</select>
+    	</div>
+    </div>
+    	<div class="problem_top">
+    		<div class="person">
+	    		<div class="pic_person"></div>
+				<div class="name">张三</div>
+			</div>
+			<div class="passage">1、一个人花8块钱买了一只鸡,9.......</div>
+    	</div>
+    	<div class="problem_down">
+    		<div class="class_subject_time">二年级 · 数学 · 2017-02-12</div>
+			<div class="reply open-win" win="question">答题</div>
+			<div class="money">￥10</div>
+    	</div>
+    	
+    	<div class="problem_top">
+    		<div class="person">
+	    		<div class="pic_person"></div>
+				<div class="name">张三</div>
+			</div>
+			<div class="passage">1、一个人花8块钱买了一只鸡,9.......</div>
+    	</div>
+    	<div class="problem_down">
+    		<div class="class_subject_time">二年级 · 数学 · 2017-02-12</div>
+			<div class="reply">答题</div>
+			<div class="money">￥10</div>
+    	</div>
+    	
+    	<div class="problem_top">
+    		<div class="person">
+	    		<div class="pic_person"></div>
+				<div class="name">张三</div>
+			</div>
+			<div class="passage">1、一个人花8块钱买了一只鸡,9.......</div>
+    	</div>
+    	<div class="problem_down">
+    		<div class="class_subject_time">二年级 · 数学 · 2017-02-12</div>
+			<div class="reply">答题</div>
+			<div class="money_no">已打赏</div>
+    	</div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/remotedb.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+    	fnReadyOpenWin()    
+    
+    }
+        
+</script>
+</html>

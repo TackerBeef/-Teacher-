@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    	body{
+    		width:100%;
+    		height: 100%;
+	       	background-color:transparent ;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flex:column;
+	        flex-flow:column;
+    	}
+     	.wrap{
+            background: #ededed;
+    	}
+    	.pic_app{
+	        width: 100px;
+	        height: 100px;
+	        background: #fff;
+	        margin:0 auto;
+	        margin-top: 15px;
+	        margin-bottom: 10px;
+    	}
+    	.name_app{
+	        text-align: center;
+	        font-size: 20px;
+    	}
+    	.id_app{
+          display: flex;
+          flex-flow: row nowrap;
+          margin: 5px 10px;
+    	}
+    	.id_person{
+          font-size: 18px;
+          flex: 1;
+    	}
+    	.id_{
+        height: 23px;
+        border: 1px #000 solid;
+        border-radius: 15px;
+        flex: 4;
+        text-align: center;
+        
+    	}
+    	.password_app{
+         display: flex;
+          flex-flow: row nowrap;
+          margin: 5px 10px; 
+    	}
+      .pasword_person{
+          font-size: 18px;
+          flex: 1;
+      }
+    	.password_{
+        height: 30px;
+        border: 1px #000 solid;
+        border-radius: 15px;
+        flex: 4;
+        text-align: center;
+         
+    	}
+    	.identifyingCode{
+            display: flex;
+          flex-flow: row nowrap;
+          margin: 5px 10px; 
+    	}
+    	.code{
+            font-size: 18px;
+          flex: 1.5;
+    	}
+    	.pic_code{
+            height: 30px;
+        border: 1px #000 solid;
+        border-radius: 15px;
+        flex: 1;
+        text-align: center;
+    	}
+    	.blank{
+    		flex:0.5
+    	}
+    	.image_code{
+            width: 50px;
+            height: 30px;
+            flex: 1;
+            background:#000;
+    	}
+    	.login_register{
+            margin: 20px auto;
+            display: flex;
+            border:1px #bbb solid;
+            width:150px;
+            height:35px;
+            border-radius: 25px;
+            background: #38a5ff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+    	}
+    	.login{
+            font-size: 17px;
+            position: relative;
+            left: 18px;
+    	}
+    	.solid{
+            border: 1px #bbb solid;
+            height: 25px;
+            position: relative;
+            left: 20px;
+            
+            
+    	}
+    	.register{
+            font-size: 17px;
+            position: relative;
+            left: 4px;
+    	}
+    	.prompt{
+            text-align: center;
+    	}
+    	.bgcolor{
+    		background:#ededed;
+    		width:100%;
+    		height:100%;
+    	}
+    	
+    </style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="pic_app"></div>
+		<div class="name_app">明星教师</div>
+		<div class="id_app">
+			<div class="id_person">账号</div>
+			<input class="id_"></input>
+		</div>
+		<div class="password_app">
+			<div class="pasword_person">密码</div>
+			<input class="password_"></input>
+		</div>
+		<div class="identifyingCode">
+			<div class="code">验证码</div>
+			<input class="pic_code"></input>
+			<div class="blank"></div>
+			<div class="image_code"></div>
+		</div>
+		<div class="login_register">
+			<div class="login">登录</div>
+			<div class="solid"></div>
+			<div class="register">注册</div>
+		</div>	
+		<div class="prompt">忘记密码？找回密码</div>
+		<div class="bgcolor"></div>
+	</div>	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		
+	};
+</script>
+</html>

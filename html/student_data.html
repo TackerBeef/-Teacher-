@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+		html,body{
+    		width:100%;
+    		height: 100%;
+	       	background-color:transparent ;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flex:column;
+	        flex-flow:column;
+            background: #ededed;
+    	}
+        header {
+                background-color: #0099ff;
+                border-bottom: solid #dddfe3 1px;
+        }
+            
+		h1 {
+                height: 50px;
+                line-height: 50px;
+                color: rgb(38, 38, 38);
+                font-size: 18px;
+                text-align: center;
+                color: #fff;
+		}
+            
+		.back {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 50px;
+                height: 50px;
+                background: url(../image/back.png) center center no-repeat;
+                background-size: 15px auto;
+            }
+    	.head{
+            margin: 10px;
+            display: flex;
+            flex-flow: row nowrap;
+            
+    	}
+    	.student_image{
+        width: 100px;
+        height: 100px;
+        background: url(../image/head_image.jpg) no-repeat;
+        background-size:100%;
+        margin: 10px;
+        
+    	}
+    	.person_list{
+        margin: 10px;
+    	}
+    	.title_student{
+            font-size: 20px;
+            margin-bottom: 5px;
+    	}
+    	.state{
+            margin-bottom: 5px;
+                display: flex;
+            
+            
+    	}
+    	.sex_img{
+    	
+                width: 15px;
+                height: 15px;
+                background:url("../image/female.png") no-repeat;
+                background-size:100% 100%;
+    	}
+    	.homework{
+            margin-left: 20px;
+            color: white;
+            font-size: 10px;
+            border: 1px #20bf00 solid;
+            background: #20bf00;
+            width: 52px;
+            text-align: center;
+            border-radius: 4px;
+            height: 14px;
+            line-height: 18px;
+    	}
+    	.id_number{
+                color: #000;
+                font-size: 15px;
+    	}
+    	.detail{
+            font-size: 15px;
+            margin-left: 20px;
+            margin-top: 5px;
+    	}
+    </style>
+</head>
+<body>
+	<header id="header">
+		<div class="back event-back" onclick="keybackreturn()"></div>
+        <h1>我的钱包</h1>
+    </header>
+	</div>
+	<div class="head">
+		<div class="student_image"></div>
+		<div class="person_list">
+			<div class="title_student">张三</div>
+			<div class="state">
+				<div class="sex_img"></div>
+				<div class="homework">已完成作业</div>
+			</div>
+			<div class="id_number">ID：12346789</div>
+		</div>
+	</div>	
+	<div class="detail name">姓名：张三</div>
+	<div class="detail class">班级：六年级（1）班</div>
+	<div class="detail school">学校：海城小学</div>
+	<div class="detail sex">性别：女</div>
+	<div class="detail connect">电话：98765432</div>
+	<div class="detail address_student">地址：海城容我可承受花园</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+	
+	};
+// 返回键————————————————————————————————————————————————	
+		function keyback(){
+		api.addEventListener({
+	    name: 'keyback'
+		}, function(ret, err) {
+		    
+		});
+	}	
+// 跳转主页————————————————————————————————————————————————	
+	function keybackreturn(){
+	api.closeToWin({
+    name: 'root'
+	});
+	}
+</script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>设置页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+		html{
+    		background:#ededed;
+		}
+    	body{
+    		width:100%;
+    		height: 100%;
+	       	background-color:transparent ;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flex:column;
+	        flex-flow:column;
+    	}
+    	.top{
+    	   margin-top: 20px;
+    	}
+    	.one{
+    	   width: 100%;
+    	   height:45px;
+           background:#fff;
+           border-bottom: 1px #ededed solid;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+    	}
+        .one0{
+           width: 100%;
+    	   height:80px;
+           background:#fff;
+           border-bottom: 1px #ededed solid;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+        }
+    	.first{
+    	   margin-left: 15px;
+    	   margin-right: 15px;
+           font-size: 15px;
+    	}
+    	.second{
+    	   margin-right: 15px;
+           font-size: 15px;
+           color:#999;
+    	}
+    	.image{
+    		background:url(../image/head_image.jpg) no-repeat;
+    		background-size:100%;
+    		width:60px;
+    		height:60px;
+    		margin-left: 20px;
+    	}
+    	.qr_code{
+    		background:url(../image/057-qrcode.png) no-repeat;
+    		background-size:100%;
+    		width:30px;
+    		height:30px;
+    		margin-right: 20px;
+    	}
+    	.footer{
+    	   margin-top: 20px;
+    	}
+    	
+    </style>
+</head>
+<body>
+	<div class="top">
+		<div class="one0">
+			<div class="image"></div>
+			<div class="first">张三</div>
+		</div>
+		<div class="one">
+			<div class="first">余额</div>
+			<div class="second">9999元</div>
+		</div>
+		<div class="one">
+			<div class="first">提现</div>
+		</div>
+		<div class="one">
+			<div class="first">充值</div>
+		</div>
+		<div class="one">
+			<div class="first">修改支付密码</div>	
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/remotedb.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		
+	};
+</script>
+</html>

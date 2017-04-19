@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<style>
+		html,body{
+		background:#ededed;
+		}
+		.wrap{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			height: auto;
+			width: auto;
+			background-color: #ededed;
+		}
+		.head_starteacher{
+			width: 100%;
+			height: 120px;
+		  background-color: #ffffff;
+			
+			margin-bottom: 5px;
+			position: relative;
+			
+			display: flex;
+			flex-flow: row nowrap;
+		}
+		.pic_teacher{
+			background: url(../image/head_image.jpg) no-repeat;
+			width: 80px;
+			height: 80px;
+			background-size:100% 100%;
+			position: relative;
+			top: 15px;
+			left: 4%;
+		}
+		.name_teacher{
+			font-size: 18px;
+			background-size:100% 100%;
+			position: relative;
+			top: 15px;
+			left: 7%;
+		}
+    	.id_number{
+	    	font-size: 14px;
+			color: #bbb;
+			display: flex;
+   		}
+		.scanning{
+			background:url(../image/qrcode.png) no-repeat;
+			width: 30px;
+			height: 30px;
+			float: right;
+			background-size:100% 100%;
+			position: absolute;
+			top: 15px;
+			left: 80%;
+		}
+		
+		.money{
+			width: 100%;
+			height: 40px;
+		  	background-color: #ffffff;
+			margin-bottom: 5px;
+			display: flex;
+		}
+		.pic_money{
+			width: 32px;
+			height: 32px;
+			background: url(../image/yens7.png) no-repeat;
+			margin-left: 7px;
+			margin-top: 4px;
+			background-size:100% 100%;
+			
+		}
+		.font_style{
+			margin-left: 29px;
+			margin-top: 10px;
+			font-size: 18px;
+			flex:1;
+		}
+		.data_money{
+			margin-top: 10px;
+			flex:1;
+			
+			font-size: 18px;
+		}
+		.set{
+			width: 100%;
+		  background-color: #ffffff;
+			display: flex;
+			width: 100%;
+			height: 40px;	
+			position: relative;
+			text-align: center;
+			
+		}
+		.set_left{
+			width: 28px;
+			height: 28px;
+			margin-left: 8px;
+			margin-top: 4px;
+		  background: url(../image/android-settings.png) no-repeat;
+			background-size:100% 100%;
+		}
+		.set_center{
+			width: 40px;
+			height: 20px;
+		  position: relative;
+			left: 28px;
+			top: 10px;
+			font-size: 18px;
+			
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="head_starteacher">
+			<div class="pic_teacher"></div>
+			<div class="name_teacher"><div>明星教师</div><div class="id_number">ID:<div id="qr_id">987654321</div></div></div>
+			<div class="scanning"></div>
+		</div>
+		<div class="money open-win" win="money">
+			<div class="pic_money"></div>
+			<div class="font_style">钱包</div>
+			<div class="data_money">9999元</div>
+		</div>
+		<div class="set open-win" win="set">
+			<div class="set_left"></div>
+			<div class="set_center">设置</div>
+		</div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+ <script type="text/javascript" src="../script/remotedb.js"></script>
+ <script type="text/javascript" src="../script/common.js"></script>
+ 
+<script type="text/javascript">
+apiready = function(){
+
+   fnReadyOpenWin();
+   qr_code(); 
+   
+}
+
+//字符转二维码---------------------------------------------------------------------------------------
+function qr_code(){
+var FNScanner = api.require('FNScanner');
+FNScanner.encodeImg({
+	type:'qr_image',
+    content: 'http://www.apicloud.com/',
+    saveToAlbum: true,
+    saveImg: {
+        path: 'fs://album.png',
+        w: 200,
+        h: 200
+    }
+}, function(ret, err) {
+    if (ret.status) {
+    	imgPath:'fs://image/qrcode.png';
+    	albumPath: 'fs://image/qrcode.png';
+        console.log(JSON.stringify(ret));
+    } else {
+        alert(JSON.stringify(err));
+    }
+});
+}	
+
+</script>
+</html>

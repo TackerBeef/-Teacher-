@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    	html,body{
+    		width:100%;
+    		height: 100%;
+	       	background-color:transparent ;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flow:column;
+	        flex-flow:column;
+            background: #ededed;
+    	}
+		header {
+			background-color: #0099ff;
+			border-bottom: solid #dddfe3 1px;
+        }
+            
+		h1 {
+			height: 50px;
+			line-height: 50px;
+			color: rgb(38, 38, 38);
+			font-size: 18px;
+			text-align: center;
+			color: #fff;
+		}
+            
+		.back {
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			width: 50px;
+			height: 50px;
+			background: url(../image/back.png) center center no-repeat;
+			background-size: 15px auto;
+		}
+    	.question{
+    		width: 100%;
+            background: #fff;
+            display: flex;
+            
+    	}
+		.person{
+    		display: flex;
+            flex-flow: column;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            flex:1;
+            
+    	}
+		.person_image{
+    		background: url(../image/head_image.jpg) no-repeat;
+            background-size: 100%;
+            width: 60px;
+            height: 60px;
+            margin: 5px auto;
+    	}
+		.person_name{
+    		margin: 0 auto;
+    	}
+		.question_content{
+    		background: #fff;
+            padding: 5px;
+            flex:3;
+    	}
+		.class_subject_time{
+    		font-size: 12px;
+            color: #6b6b6b;
+            padding: 8px;
+            background: #fff;
+    	}
+		.answer_comment{
+    		display: flex;
+            align-items: flex-end;
+            justify-content:space-around;
+            background: #fff;
+    	}
+		.answer,.comment{
+    		border: 1px #666 solid;
+            border-radius: 2px;
+            width: 70px;
+            text-align: center;
+            color: #666;
+                
+    	}
+
+		.money{ 
+			background: #ffa726;
+			border-radius: 50%;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			line-height: 70px;
+			font-size: 20px;
+			color: white;
+    	}
+    	.solid{
+    		width:100%;
+    		height:1px;
+    		margin:0px auto;
+    		overflow:hidden;
+    		padding-top:10px;
+    		background: #fff;
+            border-bottom: 1px #000 solid;
+    	}
+		.input_answer{
+    		margin: 5px 2.5%;
+            width: 95%;
+            background: #fff;
+            border-radius: 4px;            
+    	}
+		.answer_word{
+            width: 100%;
+            height: 100px;
+    		text-indent: 20px;
+    		
+    	}
+		.footer{
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+                
+    	}
+		.add_image,.add_file{
+    		border: 1px #bbb solid;
+            border-radius: 2px;
+            width: 70px;
+            text-align: center;
+            color: #000;
+            background: #fff;
+    	}
+		.send{
+    		border: 1px #bbb solid;
+            border-radius: 2px;
+            width: 70px;
+            text-align: center;
+            color: #000;
+            background: #9ccc65;
+    	}
+    </style>
+</head>
+<body>
+	<header id="header">
+		<div class="back event-back" onclick="keybackreturn()"></div>
+		<h1>我的钱包</h1>
+	</header>
+	<div class="question">
+		<div class="person">
+			<div class="person_image"></div>
+			<div class="person_name">张三</div>
+		</div>
+		<div class="question_content">1、一个人花8块钱买了一只鸡,9块钱卖掉了,然后他觉得不划算,花10块钱又买回来了,11块卖给另外一个人.问他赚了多少?</div>
+	</div>
+	<div class="class_subject_time">二年级 · 数学 · 2017-02-12</div>
+	<div class="answer_comment">
+		<div class="answer">其他答案</div>
+		<div class="comment">其他评论</div>
+		<div class="money">￥10</div>
+	</div>
+	<div class="solid"></div>
+	<div class="input_answer">
+		<input class="answer_word"></input>
+	</div>
+	<div class="footer">
+		<div class="add_image">添加图片</div>
+		<div class="add_file">添加文件</div>
+		<div class="send">发送</div>
+	</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/remotedb.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+	
+	};
+// 返回键————————————————————————————————————————————————	
+		function keyback(){
+		api.addEventListener({
+	    name: 'keyback'
+		}, function(ret, err) {
+		    
+		});
+	}	
+// 跳转主页————————————————————————————————————————————————	
+	function keybackreturn(){
+	api.closeToWin({
+    name: 'root'
+	});
+	}
+</script>
+</html>

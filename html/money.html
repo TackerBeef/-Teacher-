@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>starteacher</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+		header {
+			background-color: #0099ff;
+			border-bottom: solid #dddfe3 1px;
+        }
+            
+		h1 {
+			height: 50px;
+			line-height: 50px;
+			color: rgb(38, 38, 38);
+			font-size: 18px;
+			text-align: center;
+			color: #fff;
+		}
+            
+		.back {
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+			width: 50px;
+			height: 50px;
+			background: url(../image/back.png) center center no-repeat;
+			background-size: 15px auto;
+		}
+		.foo{
+		    position: absolute;
+		    bottom: 0px;
+		    background-color: #1c1c1c;
+		    width: 100%;
+		    height: 70px;
+			text-align: center; 
+		}
+		.foo img{
+		    width: 60px;
+		    margin: 5px;
+		    
+		}
+    </style>
+</head>
+<body>
+       <header id="header">
+            <div class="back event-back"></div>
+            <h1>我的钱包</h1>
+        </header>
+       
+        <div class="foo"><img src="../image/qieding.png" onclick="sendImage()"></div>
+</body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/SHA1.js"></script>
+    <script type="text/javascript" src="../script/remotedb.js"></script>
+    <script type="text/javascript" src="../script/common.js"></script>
+    <script type="text/javascript">
+    apiready = function(){
+    	fnReady();
+        fnReadyFrame();
+    };
+    function sendImage(){
+
+       api.execScript({
+           name: 'quAdd',
+           frameName: 'quAdd_frame',
+           script: 'fnSave();'
+       });
+    
+    };
+
+</script>
+</html>

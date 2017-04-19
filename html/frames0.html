@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>初始页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<style>
+	html,body{
+		background:#ededed;
+	}
+	#wrap{
+		height: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-flex-flow: column;
+        display: flex;
+        flex-flow: column;
+	}
+	.bcolor{
+		width: 100%;
+		background-color: #ededed;
+		margin: 0;
+		padding: 0;
+	}
+	.managelist{
+		display: -webkit-flex;
+		display: flex;
+		background-color: #38a5ff;
+		flex-flow: nowrap;
+		height: 42px;
+		margin: 5px 1.5%;
+		border-radius: 5px;
+		border: 1px #bbbbbb;
+		align-items: center;
+	}
+	.imgminus{
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+		background:url(../image/268-minus_1.png) no-repeat;
+		background-size:100% 100%;
+	}
+	.imgplus{
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+		background:url(../image/267-plus_2.png) no-repeat;
+		background-size:100% 100%;
+	}  
+	.name_class{
+    	font-size: 16px;
+		color: black;
+		margin-left: 1%;
+	}
+	.number_class{
+		font-size:10px;
+		color: white;
+		position: relative;
+		top: 2px;
+		left: 30%;
+	}
+
+	#Sitem{
+		position: relative;
+		width: 100%;
+		height: 80px;
+		background-color: #eeeeee;
+		border-bottom:1px #ccc solid;
+		margin: 0 auto;
+
+	}
+	.itemImage{
+		position: relative;
+		float: left;
+		width: 50px;
+		height: 50px;
+		background:url(../image/thumb_raw_1487480887.jpeg) no-repeat;
+		background-size: 100% 100%;
+		margin: 10px;
+	}
+	.itemName{
+		position: relative;
+		float: left;
+		width: 40px;
+		margin: 10px;
+		padding: 10px;
+		font-size: 14px;
+	}
+	.itemSex{
+		position: relative;
+		float: left;
+		width: 13px;
+		height: 13px;
+		background-size:100%;
+		margin: 10px;
+		margin-top: 20px;
+		margin-right: 10px;
+		
+	}
+	.itemhomework{
+		position: relative;
+		float: left;
+		width: 60px;
+		height: 12px;
+		background-color: #20bf00;
+		text-align:center;
+		color: #fff;
+		border-radius: 2px;
+		line-height:12px;
+		padding:0px 1px 2px;
+		margin-top: 18px;
+		margin-left: 10px;
+		font-size: 11px;
+	}
+	.itemTime{
+		position: relative;
+		float: right;
+		margin-top: 60px;
+		padding-right: 30px;
+		color: #999999;
+		width: 45px;
+		font-size: 12px;
+	}
+	.make_class{
+		font-size:16px;
+		color: #000;
+		width: 200px;
+		height: 40px;
+		border:1px #bbb dotted;
+		border-radius:5px;
+		background:transparent;
+		margin:10px auto;
+		text-align:center;
+		line-height: 35px;
+		
+	}
+	.none{
+	display:none;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+
+<!--列表传送*********************************************************-->		
+<!--		<div class="bcolor">
+			<div class="managelist" id="managelist" onclick="showAndHide()">
+					<div class="imgplus imgminus" id="logo"></div>
+				<div class="name_class" >六年级（2）班</div>
+				<div class="number_class">班级加入码:896456465</div>
+			</div>
+		</div>-->
+<!--列表传送*********************************************************-->
+	
+<div id="listDiv">aa</div>
+<script id="newslistT" type="text/template">
+{{~ it:data }}
+		<div class="bcolor">
+			<div class="managelist" id="managelist" onclick="showAndHide(i)">
+				<div class="imgplus imgminus" id="logo"></div>
+				<div class="name_class" >{{=data.cla.class_name}}</div>
+				<div class="number_class">班级加入码:{{=data.cla.classNumber}}</div>
+			</div>
+		</div>
+{{for(var a in data.student){}}
+<div id="Sitem" >
+			<div class="itemImage">{{=data.student[a].image}}</div>
+			<div class="itemName">{{=data.student[a].name}}</div>
+			<div class="itemSex" style="background-image: url(../image/{{=data.student[a].sex}}.png);"></div>
+			<div class="itemhomework">{{=data.student[a].homework}}</div>
+			<div class="itemTime">{{=data.student[a].time}}</div>
+</div>
+{{ } }}
+{{~}}
+
+</script>
+		
+<!-- //////////////////////////////////////////////////////- -->
+<!--		<div class="bcolor">
+			<div class="managelist managelist0">
+					<div class="imgplus"></div>
+				<div class="name_class">六年级班</div>
+				<div class="number_class">班级加入码</div>
+			</div>
+		</div>-->
+<!-- //////////////////////////////////////////////////////- -->
+		
+		<div class="make_class open-win" win="dropdownList1">+新增班级</div>
+	</div>
+</body>
+<script type="text/javascript" src="../script/doT.min.js"></script>    
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/remotedb.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript" src="../script/jquery.js"></script>
+<!--列表信息***************************************-->
+<script>
+apiready = function(){};
+//var dataArr = {"array":[{"first":true,"personName":001001,"class_name":"六年级（1）班","class_number":"321456987","image":"","name":"张三","sex":"female","homework":"已完成作业","time":"2017-3-14"},
+//						{"first":false,"personName":001002,"class_name":"六年级（1）班","class_number":"321456987","image":"","name":"李四","sex":"male","homework":"未完成作业","time":"2017-3-14"},
+//						{"first":false,"personName":001003,"class_name":"六年级（1）班","class_number":"321456987","image":"","name":"王五","sex":"male","homework":"已完成作业","time":"2017-3-14"},
+//						{"first":true,"personName":002001,"class_name":"六年级（2）班","class_number":"321456987","image":"","name":"张三","sex":"female","homework":"已完成作业","time":"2017-3-14"},
+//						{"first":false,"personName":002002,"class_name":"六年级（2）班","class_number":"321456987","image":"","name":"李四","sex":"male","homework":"未完成作业","time":"2017-3-14"},
+//						{"first":false,"personName":002003,"class_name":"六年级（2）班","class_number":"321456987","image":"","name":"王五","sex":"male","homework":"已完成作业","time":"2017-3-14"},
+//						]};
+
+						
+var className = [{cla:{"classNumber":9565147,"class_name":"六年级（1）班"},student:[{"personNumber":001001,"class_number":"321456987","image":"","name":"张三","sex":"female","homework":"已完成作业","time":"2017-3-14"},
+											{"personNumber":001002,"class_number":"321456987","image":"","name":"李四","sex":"male","homework":"未完成作业","time":"2017-3-14"},
+											{"personNumber":001003,"class_number":"321456987","image":"","name":"王五","sex":"male","homework":"已完成作业","time":"2017-3-14"}]},
+				{cla:{"classNumber":9565147,"class_name":"六年级（2）班"},student:[{"personNumber":001001,"class_number":"321456987","image":"","name":"张三1","sex":"female","homework":"已完成作业","time":"2017-3-14"},
+											{"personNumber":001002,"class_number":"321456987","image":"","name":"李四1","sex":"male","homework":"未完成作业","time":"2017-3-14"},
+											{"personNumber":001003,"class_number":"321456987","image":"","name":"王五1","sex":"male","homework":"已完成作业","time":"2017-3-14"}]}];
+
+var tmp1=document.getElementById('newslistT');
+	var templateContent=tmp1.innerHTML;
+	var dotTemplate=doT.template(templateContent);
+	var listDiv=document.getElementById('listDiv');
+	listDiv.innerHTML = dotTemplate(className); 
+	
+	function JSONLength(obj) {
+	var size = 0, key;
+	for (key in obj) {
+	if (obj.hasOwnProperty(key)) size++;
+	}
+	return size;
+	};
+	var classCount=JSONLength(className);
+
+
+for(var i=0;i<classCount;i++){
+function showAndHide(i){ 
+	var arr=$api.byId("Sitem");
+	var manag=$api.byId('managelist');
+	var logo=$api.byId('logo');
+    if(isopen==false){
+	$api.removeCls(arr,'none');
+	$api.removeCls(logo, 'imgplus');
+	$api.css(manag,'background-color:#c5e2fa');
+	isopen=true;
+	}else{
+	$api.addCls(arr,'none');
+	$api.addCls(logo, 'imgplus');
+	$api.css(manag,'background-color:#38a5ff');
+	isopen=false;
+	}
+}
+console.log(i);	
+};
+console.log()
+</script>
+
+<script type="text/javascript">
+var isopen=false;
+apiready = function(){
+	fnReady();
+   	fnReadyOpenWin();
+   	
+}
+//ajax---------------------------------------------------------------
+
+
+
+
+
+
+
+
+//ajax---------------------------------------------------------------
+
+
+</script>
+</html>

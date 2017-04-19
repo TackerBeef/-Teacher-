@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+		html{
+    		background:#ededed;
+		}
+    	body{
+    		width:100%;
+    		height: 100%;
+	       	background-color:transparent ;
+	        display: -webkit-box;
+	        display: -webkit-flex;
+	        display: flex;
+	        -webkit-box-orient:vertical;
+	        -webkit-flex-flex:column;
+	        flex-flow:column;
+    	}
+    	        header {
+                background-color: #0099ff;
+                border-bottom: solid #dddfe3 1px;
+        }
+            
+		h1 {
+                height: 50px;
+                line-height: 50px;
+                color: rgb(38, 38, 38);
+                font-size: 18px;
+                text-align: center;
+                color: #fff;
+		}
+            
+		.back {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 50px;
+                height: 50px;
+                background: url(../image/back.png) center center no-repeat;
+                background-size: 15px auto;
+            }
+	 	.search_area{
+			width: 100%;
+			height: 40px;
+			background-color: #cccccc;
+		}
+		.search{
+			width: 97%;
+			height: 30px;
+			background-color:white;
+			border-radius: 5px;
+			position: relative;
+			top: 5px;
+			margin:auto;
+			font-size: 18px;		
+		}
+		body div div img{
+			width: 20px;
+			position: relative;
+			left: 5px;
+			top: 5px;
+			display: block;
+			float: left;
+			background-size:100% 100%;
+		}
+    </style>
+</head>
+<body>
+	<header id="header">
+		<div class="back event-back" ></div>
+        <h1>添加学生</h1>
+    </header>
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		fnReady();
+        fnReadyFrame(); 
+	};
+
+</script>
+</html>
